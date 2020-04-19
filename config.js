@@ -5,8 +5,8 @@ global.io = require('socket.io')(http);
 global.socketioJwt   = require("socketio-jwt");
 global.mysql = require('mysql');
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(8443, function(){
+  console.log('listening on *:8443');
 });
 io.use(socketioJwt.authorize({
 	secret: 'k93hjj98ys8gfksm74nik709kmkdjgkh9784hf8y3ruskf874hfkdnjdj9du58fh',
