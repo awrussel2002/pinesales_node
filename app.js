@@ -5,7 +5,7 @@ var nsp_master = io.of('/master');
 var nsp_notification = io.of('/notification');
 
 /**
-* Client Namespace
+* Client Namespace 
 * Handler connection for  users
 **/
 nsp_client.on('connection', function(socket){
