@@ -10,7 +10,6 @@ nsp_admin.on('connection', function(socket){
      * Get List of connected users
      */
     socket.on('getUser', function(data){
-        console.log(data);
         var clients = io.of('/clients').clients();
         var connected_users = [];
         for (var id in clients.connected) {
@@ -25,7 +24,6 @@ nsp_admin.on('connection', function(socket){
             };
             connected_users.push(s_client);
         }
-        console.log(connected_users.length);
         socket.emit('online_user_list', connected_users);
     });
 
