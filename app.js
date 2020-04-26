@@ -6,12 +6,6 @@ var nsp_notification = io.of('/notification');
 
 nsp_admin.on('connection', function(socket){
 
-    // console.log( socket.handshake.query );
-    socket.on('disconnect', function () {
-        // console.log('admin disconnected');
-		// io.of('/master').emit('user_removed', new_client );
-    });
-
     /**
      * Get List of connected users
      */
@@ -62,8 +56,6 @@ nsp_client.on('connection', function(socket){
         'branch_name' : branch_name,
         'token' : token
 	};
-	// io.of('/master').emit('new_user_added', new_client );
-    // io.of('/clients').emit('new_user_added', new_client );
 
     socket.on('msg', function(data){
         // console.log(data);
@@ -71,8 +63,6 @@ nsp_client.on('connection', function(socket){
 
     io.of('/admin').emit('new_user_added', new_client );
     
-    // console.log('Connected', new_client);
-
 	socket.on('disconnect', function () {
         io.of('/admin').emit('user_removed', new_client );
 	});
